@@ -34,7 +34,8 @@ angular.module('taotrack', ['ionic', 'taotrack.controllers'])
     url: "/cycles",
     views: {
       'menuContent': {
-        templateUrl: "templates/cycles.html"
+        templateUrl: "templates/cycles.html",
+        controller: 'CyclesCtrl'
       }
     }
   });
