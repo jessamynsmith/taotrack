@@ -2,7 +2,7 @@
   <ion-content class="padding">
     <form ng-submit="updateGraph(birthDate)">
         <label>Birth Date</label>
-        <input type="text" placeholder="YYYY-MM-DD" value="1990-01-20" ng-model="birthDate">
+        <input type="date" placeholder="YYYY-MM-DD" ng-model="birthDate">
         <button type="submit" class="button button-positive">Update</button>
     </form>
     <highchart config="chartConfig"></highchart>
