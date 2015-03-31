@@ -41,6 +41,7 @@ angular.module('taotrack.controllers', ['highcharts-ng'])
         data: calculateCycle(birthDate, endDate, 33)
       }];
 
+      // If this is enabled, the graph does not display until the range selector is clicked manually
       //$scope.chartConfig.options.rangeSelector.selected = 1;
     };
 
