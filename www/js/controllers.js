@@ -46,7 +46,6 @@ angular.module('taotrack.controllers', ['highcharts-ng'])
     };
 
     $scope.updateBirthDate = function(birthDate) {
-      // TODO fix formatting of birthDate form
       // TODO error handling if incorrectly formatted date
       var birthDate = new Date(birthDate);
       window.localStorage['birthDate'] = birthDate.toISOString();
