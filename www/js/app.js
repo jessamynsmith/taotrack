@@ -21,25 +21,33 @@ angular.module('taotrack', ['ionic', 'taotrack.controllers'])
 })
 
 .config(function($stateProvider, $urlRouterProvider) {
+
+  // Ionic uses AngularUI Router which uses the concept of states
+  // Learn more here: https://github.com/angular-ui/ui-router
+  // Set up the various states which the app can be in.
+  // Each state's controller can be found in controllers.js
   $stateProvider
 
-  .state('app', {
-    url: "/app",
+  // setup an abstract state for the tabs directive
+    .state('tab', {
+    url: "/tab",
     abstract: true,
-    templateUrl: "templates/menu.html",
-    controller: 'AppCtrl'
+    templateUrl: "templates/tabs.html"
   })
 
-  .state('app.cycles', {
-    url: "/cycles",
+  // Each tab has its own nav history stack:
+
+  .state('tab.cycles', {
+    url: '/cycles',
     views: {
-      'menuContent': {
-        templateUrl: "templates/cycles.html",
+      'tab-cycles': {
+        templateUrl: 'templates/tab-cycles.html',
         controller: 'CyclesCtrl'
       }
     }
   });
 
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/app/cycles');
+  $urlRouterProvider.otherwise('/tab/cycles');
+
 });

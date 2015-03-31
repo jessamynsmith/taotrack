@@ -30,6 +30,7 @@ angular.module('taotrack.controllers', ['highcharts-ng'])
       // TODO fix formatting of birthDate form
       // TODO store this date for next time
       var birthDate = new Date(birthDateString);
+      // TODO error handling if incorrectly formatted date
 
       $scope.chartConfig.series.push({
         name: 'Physical',
