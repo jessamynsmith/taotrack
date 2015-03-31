@@ -23,18 +23,11 @@ angular.module('taotrack.controllers', ['highcharts-ng'])
       return cycles;
     };
 
-    var todayDate = new Date();
-    var endDate = todayDate.addDays(14);
+    var updateGraph = function(birthDate) {
+      var todayDate = new Date();
+      var endDate = todayDate.addDays(14);
 
-    $scope.updateGraph = function(birthDateString) {
-      // TODO fix formatting of birthDate form
-      // TODO store this date for next time
-      var birthDate = new Date(birthDateString);
-      // TODO error handling if incorrectly formatted date
-      // TODO tooltip isn't showing full date, just month and year
-      // TODO graph doesn't show until zoom is clicked
-
-      $scope.chartConfig.series.push({
+      $scope.chartConfig.series = [{
         name: 'Physical',
         color: '#E31230',
         data: calculateCycle(birthDate, endDate, 23)
@@ -46,7 +39,18 @@ angular.module('taotrack.controllers', ['highcharts-ng'])
         name: 'Intellectual',
         color: '#551A8B',
         data: calculateCycle(birthDate, endDate, 33)
-      });
+      }];
+    };
+
+    $scope.updateBirthdate = function(birthDateString) {
+      // TODO fix formatting of birthDate form
+      // TODO store this date for next time
+      var birthDate = new Date(birthDateString);
+      // TODO error handling if incorrectly formatted date
+      // TODO tooltip isn't showing full date, just month and year
+      // TODO graph doesn't show until zoom is clicked
+
+      updateGraph(birthDate);
     };
 
     $scope.chartConfig = {
