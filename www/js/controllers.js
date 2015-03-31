@@ -42,14 +42,15 @@ angular.module('taotrack.controllers', ['highcharts-ng'])
       }];
     };
 
-    $scope.updateBirthdate = function(birthDateString) {
+    $scope.updateBirthDate = function(birthDate) {
       // TODO fix formatting of birthDate form
-      // TODO store this date for next time
-      var birthDate = new Date(birthDateString);
       // TODO error handling if incorrectly formatted date
-
+      var birthDate = new Date(birthDate);
+      window.localStorage['birthDate'] = birthDate.toISOString();
       updateGraph(birthDate);
     };
+
+    $scope.params = {};
 
     $scope.chartConfig = {
       options: {
@@ -87,5 +88,11 @@ angular.module('taotrack.controllers', ['highcharts-ng'])
       series: [],
       useHighStocks: true
     };
+
+    var birthDate = window.localStorage['birthDate'];
+    if (birthDate) {
+      $scope.params.birthDate = new Date(birthDate);
+      updateGraph($scope.params.birthDate);
+    }
 
   });
