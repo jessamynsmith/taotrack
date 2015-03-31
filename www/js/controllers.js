@@ -74,6 +74,20 @@ angular.module('taotrack.controllers', ['highcharts-ng'])
         scrollbar: {
           enabled: true
         },
+        xAxis: {
+          type: 'datetime',
+          range: 1 * 30 * 24 * 3600 * 1000,
+          plotLines: [{
+              color: 'black',
+              dashStyle: 'longdash',
+              label: {
+                  rotation: 0,
+                  text: 'Now'
+              },
+              value: Date.now(),
+              width: 2
+            }]
+        },
         yAxis: {
           min: 0,
           title: {
