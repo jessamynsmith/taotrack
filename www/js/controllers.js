@@ -16,7 +16,7 @@ angular.module('taotrack.controllers', ['highcharts-ng'])
       var cycles = [];
       var currentValue = false;
       while (currentDate < endDate) {
-        cycles.push([currentDate.getTime(), currentValue * 100]);
+        cycles.push([currentDate.getTime(), currentValue * 100.0]);
         currentValue = !currentValue;
         currentDate = new Date(currentDate.getTime() + increment);
       }
@@ -40,8 +40,6 @@ angular.module('taotrack.controllers', ['highcharts-ng'])
         color: '#551A8B',
         data: calculateCycle(birthDate, endDate, 33)
       }];
-
-      $scope.chartConfig.options.rangeSelector.selected = 1;
     };
 
     $scope.updateBirthdate = function(birthDateString) {
@@ -49,8 +47,6 @@ angular.module('taotrack.controllers', ['highcharts-ng'])
       // TODO store this date for next time
       var birthDate = new Date(birthDateString);
       // TODO error handling if incorrectly formatted date
-      // TODO tooltip isn't showing full date, just month and year
-      // TODO graph doesn't show until zoom is clicked
 
       updateGraph(birthDate);
     };
@@ -58,48 +54,37 @@ angular.module('taotrack.controllers', ['highcharts-ng'])
     $scope.chartConfig = {
       options: {
         chart: {
-          type: 'spline'
-        },
-        // TODO make crosshairs available anywhere on graphed line, if possible
-        tooltip: {
-          crosshairs: {
-            color: 'black',
-            dashStyle: 'longdash'
-          },
-          shared: true
+          type: 'spline',
+          zoomType: 'x'
         },
         rangeSelector: {
-          enabled: true,
-          inputEnabled: false
-        },
-        scrollbar: {
           enabled: true
         },
         xAxis: {
           type: 'datetime',
-          range: 1 * 30 * 24 * 3600 * 1000,
           plotLines: [{
-              color: 'black',
-              dashStyle: 'longdash',
-              label: {
-                  rotation: 0,
-                  text: 'Now'
-              },
-              value: Date.now(),
-              width: 2
-            }]
+            color: 'black',
+            dashStyle: 'longdash',
+            label: {
+              rotation: 0,
+              text: 'Today'
+            },
+            value: Date.now(),
+            width: 2
+          }]
         },
         yAxis: {
           min: 0,
           title: {
-            text: 'Cycle Length'
+            text: 'Level (percentage)'
           }
+        },
+        tooltip: {
+          headerFormat: '',
+          pointFormat: '{series.name}: {point.x:%b. %e %Y}: {point.y:.0f}%<br>'
         }
       },
       series: [],
-      title: {
-        text: ''
-      },
       useHighStocks: true
     };
 
