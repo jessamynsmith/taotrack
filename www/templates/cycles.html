@@ -1,5 +1,10 @@
 <ion-view view-title="Energetic Cycles">
   <ion-content class="padding">
-    <highchart id="id_energetic_cycles" config="chartConfig"></highchart>
+    <form ng-submit="updateGraph(birthDate)">
+        <label>Birth Date</label>
+        <input type="text" placeholder="YYYY-MM-DD" value="1990-01-20" ng-model="birthDate">
+        <button type="submit" class="button button-positive">Update</button>
+    </form>
+    <highchart config="chartConfig"></highchart>
   </ion-content>
 </ion-view>
