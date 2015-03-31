@@ -40,6 +40,8 @@ angular.module('taotrack.controllers', ['highcharts-ng'])
         color: '#551A8B',
         data: calculateCycle(birthDate, endDate, 33)
       }];
+
+      $scope.chartConfig.options.rangeSelector.selected = 1;
     };
 
     $scope.updateBirthdate = function(birthDateString) {
@@ -68,7 +70,6 @@ angular.module('taotrack.controllers', ['highcharts-ng'])
         },
         rangeSelector: {
           enabled: true,
-          selected: 1,
           inputEnabled: false
         },
         scrollbar: {
