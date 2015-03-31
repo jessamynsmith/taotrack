@@ -31,6 +31,8 @@ angular.module('taotrack.controllers', ['highcharts-ng'])
       // TODO store this date for next time
       var birthDate = new Date(birthDateString);
       // TODO error handling if incorrectly formatted date
+      // TODO tooltip isn't showing full date, just month and year
+      // TODO graph doesn't show until zoom is clicked
 
       $scope.chartConfig.series.push({
         name: 'Physical',
