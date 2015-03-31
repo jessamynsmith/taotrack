@@ -25,11 +25,25 @@ angular.module('taotrack.controllers', ['highcharts-ng'])
 
     var todayDate = new Date();
     var endDate = todayDate.addDays(14);
-    // TODO use birthDate from user
-    var birthDate = new Date(1990, 1, 1);
 
-    $scope.updateGraph = function(birthDate) {
-      console.log(new Date(birthDate));
+    $scope.updateGraph = function(birthDateString) {
+      // TODO fix formatting of birthDate form
+      // TODO store this date for next time
+      var birthDate = new Date(birthDateString);
+
+      $scope.chartConfig.series.push({
+        name: 'Physical',
+        color: '#E31230',
+        data: calculateCycle(birthDate, endDate, 23)
+      }, {
+        name: 'Emotional',
+        color: '#0f76ed',
+        data: calculateCycle(birthDate, endDate, 28)
+      }, {
+        name: 'Intellectual',
+        color: '#551A8B',
+        data: calculateCycle(birthDate, endDate, 33)
+      });
     };
 
     $scope.chartConfig = {
@@ -66,19 +80,5 @@ angular.module('taotrack.controllers', ['highcharts-ng'])
       },
       useHighStocks: true
     };
-
-    $scope.chartConfig.series.push({
-      name: 'Physical',
-      color: '#E31230',
-      data: calculateCycle(birthDate, endDate, 23)
-    }, {
-      name: 'Emotional',
-      color: '#0f76ed',
-      data: calculateCycle(birthDate, endDate, 28)
-    }, {
-      name: 'Intellectual',
-      color: '#551A8B',
-      data: calculateCycle(birthDate, endDate, 33)
-    });
 
   });
