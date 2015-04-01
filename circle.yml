@@ -13,7 +13,7 @@ test:
         - node_modules/karma/bin/karma start tests/my.conf.js --single-run
 
 deployment:
-    production:
-        branch: master
-        commands:
-            - git push git@heroku.com:taotrack.git $CIRCLE_SHA1:refs/heads/master
+  production:
+    branch: master
+    heroku:
+      appname: taotrack
