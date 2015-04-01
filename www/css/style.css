@@ -15,3 +15,8 @@ input[type="date"] {
     margin-right: 12px;
     height: 46px;
 }
+
+.form-error {
+    padding: 4px 12px;
+    color: red;
+}

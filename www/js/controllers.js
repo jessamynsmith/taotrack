@@ -1,4 +1,4 @@
-angular.module('taotrack.controllers', ['highcharts-ng'])
+angular.module('taotrack.controllers', ['ngMessages', 'highcharts-ng'])
 
   .controller('AppCtrl', function($scope) {
   })
@@ -46,10 +46,12 @@ angular.module('taotrack.controllers', ['highcharts-ng'])
     };
 
     $scope.updateBirthDate = function(birthDateString) {
-      // TODO error handling if incorrectly formatted date
-      var birthDate = new Date(birthDateString);
-      window.localStorage.birthDate = birthDate.toISOString();
-      updateGraph(birthDate);
+      var timestamp = Date.parse(birthDateString);
+      if (!isNaN(timestamp)) {
+        var birthDate = new Date(timestamp);
+        window.localStorage.birthDate = birthDate.toISOString();
+        updateGraph(birthDate);
+      }
     };
 
     $scope.params = {};
