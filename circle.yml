@@ -1,0 +1,19 @@
+---
+machine:
+  node:
+    version: 0.10.22
+
+dependencies:
+  override:
+    - npm install --dev
+
+test:
+    override:
+        - node_modules/.bin/jshint www/js
+        - karma start tests/my.conf.js --single-run
+
+deployment:
+    production:
+        branch: master
+        commands:
+            - git push git@heroku.com:taotrack.git $CIRCLE_SHA1:refs/heads/master
