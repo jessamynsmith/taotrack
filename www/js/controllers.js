@@ -10,7 +10,7 @@ angular.module('taotrack.controllers', ['highcharts-ng'])
       return dat;
     };
 
-    var calculateCycle = function(startDate, endDate, cycleLength) {
+    $scope.calculateCycle = function(startDate, endDate, cycleLength) {
       var currentDate = startDate;
       var increment = (cycleLength / 2.0) * 24 * 60 * 60 * 1000;
       var cycles = [];
@@ -30,15 +30,15 @@ angular.module('taotrack.controllers', ['highcharts-ng'])
       $scope.chartConfig.series = [{
         name: 'Physical',
         color: '#E31230',
-        data: calculateCycle(birthDate, endDate, 23)
+        data: $scope.calculateCycle(birthDate, endDate, 23)
       }, {
         name: 'Emotional',
         color: '#0f76ed',
-        data: calculateCycle(birthDate, endDate, 28)
+        data: $scope.calculateCycle(birthDate, endDate, 28)
       }, {
         name: 'Intellectual',
         color: '#551A8B',
-        data: calculateCycle(birthDate, endDate, 33)
+        data: $scope.calculateCycle(birthDate, endDate, 33)
       }];
 
       // If this is enabled, the graph does not display until the range selector is clicked manually
