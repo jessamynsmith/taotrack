@@ -10,7 +10,7 @@ dependencies:
 test:
     override:
         - node_modules/.bin/jshint www/js
-        - karma start tests/my.conf.js --single-run
+        - node_modules/karma/bin/karma start tests/my.conf.js --single-run
 
 deployment:
     production:
