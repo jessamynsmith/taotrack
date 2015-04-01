@@ -1,7 +1,8 @@
 describe('controllers', function() {
   var scope;
 
-  // Mock highcharts-ng as it  is not available
+  // Mock unavailable modules
+  angular.module('ngMessages', []);
   angular.module('highcharts-ng', []);
 
   // load the controller's module
