@@ -3,10 +3,14 @@ machine:
   node:
     version: 0.10.22
 
+dependencies:
+  override:
+    - npm install jshint jasmine-core karma karma-chrome-launcher karma-jasmine karma-phantomjs-launcher
+
 test:
-    override:
-        - node_modules/.bin/jshint www/js
-        - node_modules/karma/bin/karma start tests/my.conf.js --single-run
+  override:
+    - node_modules/.bin/jshint www/js
+    - node_modules/karma/bin/karma start tests/my.conf.js --single-run
 
 deployment:
   production:
