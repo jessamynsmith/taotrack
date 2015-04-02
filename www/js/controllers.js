@@ -23,9 +23,8 @@ angular.module('taotrack.controllers', ['ngMessages', 'highcharts-ng'])
       return cycles;
     };
 
-    var updateGraph = function(birthDate) {
-      var todayDate = new Date();
-      var endDate = todayDate.addDays(14);
+    $scope.updateGraph = function(birthDate) {
+      var endDate = $scope.todayDate.addDays(14);
 
       $scope.chartConfig.series = [{
         name: 'Physical',
@@ -50,10 +49,11 @@ angular.module('taotrack.controllers', ['ngMessages', 'highcharts-ng'])
       if (!isNaN(timestamp)) {
         var birthDate = new Date(timestamp);
         window.localStorage.birthDate = birthDate.toISOString();
-        updateGraph(birthDate);
+        $scope.updateGraph(birthDate);
       }
     };
 
+    $scope.todayDate = new Date();
     $scope.params = {};
 
     var content = angular.element(document.querySelector('#cycles-content')),
@@ -118,7 +118,7 @@ angular.module('taotrack.controllers', ['ngMessages', 'highcharts-ng'])
     var birthDate = window.localStorage.birthDate;
     if (birthDate) {
       $scope.params.birthDate = new Date(birthDate);
-      updateGraph($scope.params.birthDate);
+      $scope.updateGraph($scope.params.birthDate);
     }
 
   });
