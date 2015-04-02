@@ -12,6 +12,7 @@ test:
   override:
     - node_modules/.bin/jshint www/js
     - node_modules/karma/bin/karma start tests/my.conf.js --single-run
+    - node_modules/coveralls/bin/coveralls.js < tests/coverage/PhantomJS*/lcov.info
 
 deployment:
   production:
