@@ -24,6 +24,6 @@ describe('controllers', function() {
   it('should have cycles if start and end date are different', function() {
     var expected = [[1422766800000, 0], [1423198800000, 100], [1423630800000, 0],
       [1424062800000, 100], [1424494800000, 0], [1424926800000, 100]];
-    expect(scope.calculateCycle(new Date(2015, 1, 1), new Date(2015, 1, 30), 10)).toEqual(expected);
+    expect(scope.calculateCycle(new Date(1422766800000), new Date(1425272400000), 10)).toEqual(expected);
   });
 });
