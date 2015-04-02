@@ -99,9 +99,9 @@ angular.module('taotrack.controllers', ['ngMessages', 'highcharts-ng'])
           layout: 'vertical',
           labelFormatter: function() {
             var descriptions = {
-              Physical: 'strength and energy',
-              Emotional: 'cheerfulness and cooperation',
-              Intellectual: 'learning new concepts'
+              Physical: 'strength, endurance',
+              Emotional: 'cheerfulness, cooperation, optimism',
+              Intellectual: 'creativity, learning new concepts'
             };
             return this.name + ': ' + descriptions[this.name];
           }
