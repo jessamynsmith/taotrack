@@ -5,7 +5,8 @@ machine:
 
 dependencies:
   override:
-    - npm install ionic jshint jasmine-core karma karma-chrome-launcher karma-jasmine karma-phantomjs-launcher
+    - npm install
+    - bower install
 
 test:
   override:
