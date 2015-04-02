@@ -56,11 +56,19 @@ angular.module('taotrack.controllers', ['ngMessages', 'highcharts-ng'])
 
     $scope.params = {};
 
+    var content = angular.element(document.querySelector('#cycles-content')),
+      header = angular.element(document.querySelector('ion-header-bar')),
+      tabBar = angular.element(document.querySelector('.tab-nav')),
+      form = angular.element(document.querySelector('form')),
+      height = content.prop('offsetHeight') - header.prop('offsetHeight')
+                - tabBar.prop('offsetHeight') - form.prop('offsetHeight') - 26;
+
     $scope.chartConfig = {
       options: {
         chart: {
           type: 'spline',
-          zoomType: 'x'
+          zoomType: 'x',
+          height: height
         },
         rangeSelector: {
           enabled: true,
@@ -81,8 +89,21 @@ angular.module('taotrack.controllers', ['ngMessages', 'highcharts-ng'])
         },
         yAxis: {
           min: 0,
+          max: 100,
           title: {
-            text: 'Level (percentage)'
+            text: 'Level (%)'
+          }
+        },
+        legend: {
+          enabled: true,
+          layout: 'vertical',
+          labelFormatter: function() {
+            var descriptions = {
+              Physical: 'strength and energy',
+              Emotional: 'cheerfulness and cooperation',
+              Intellectual: 'learning new concepts'
+            };
+            return this.name + ': ' + descriptions[this.name];
           }
         },
         tooltip: {
