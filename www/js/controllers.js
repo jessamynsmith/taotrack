@@ -60,8 +60,8 @@ angular.module('taotrack.controllers', ['ngMessages', 'highcharts-ng'])
       header = angular.element(document.querySelector('ion-header-bar')),
       tabBar = angular.element(document.querySelector('.tab-nav')),
       form = angular.element(document.querySelector('form')),
-      height = content.prop('offsetHeight') - header.prop('offsetHeight')
-                - tabBar.prop('offsetHeight') - form.prop('offsetHeight') - 26;
+      height = content.prop('offsetHeight') - header.prop('offsetHeight') -
+        tabBar.prop('offsetHeight') - form.prop('offsetHeight') - 26;
 
     $scope.chartConfig = {
       options: {
