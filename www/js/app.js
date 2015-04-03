@@ -45,6 +45,16 @@ angular.module('taotrack', ['ionic', 'taotrack.controllers'])
             controller: 'CyclesCtrl'
           }
         }
+      })
+
+      .state('tab.elements', {
+        url: '/elements',
+        views: {
+          'tab-elements': {
+            templateUrl: 'templates/tab-elements.html',
+            controller: 'ElementsCtrl'
+          }
+        }
       });
 
     // if none of the above states are matched, use this as the fallback

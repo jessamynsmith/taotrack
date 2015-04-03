@@ -121,4 +121,7 @@ angular.module('taotrack.controllers', ['ngMessages', 'highcharts-ng'])
       $scope.updateGraph($scope.params.birthDate);
     }
 
+  })
+
+  .controller('ElementsCtrl', function($scope) {
   });

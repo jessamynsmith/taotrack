@@ -32,3 +32,38 @@ input[type="date"] {
 .nav-bar-title span {
     text-align: center;
 }
+
+.title {
+    font-weight: bold;
+    padding-left: 15px;
+}
+
+.color {
+    margin-bottom: 4px;
+}
+
+.green {
+    border-left: 10px #008000 solid;
+    border-top: 3px #008000 solid;
+}
+
+.red {
+    border-left: 10px #dc143c solid;
+    border-top: 3px #dc143c solid;
+}
+
+.yellow {
+    border-left: 10px #ffd700 solid;
+    border-top: 3px #ffd700 solid;
+}
+
+.white {
+    border-left: 1px #000000 solid;
+    border-top: 1px #000000 solid;
+    padding-left: 15px;
+}
+
+.blue {
+    border-left: 10px #0000cd solid;
+    border-top: 3px #0000cd solid;
+}
