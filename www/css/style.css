@@ -20,3 +20,15 @@ input[type="date"] {
     padding: 4px 12px;
     color: red;
 }
+
+.nav-bar-title {
+    width: 100%;
+}
+
+.nav-bar-title img {
+    float: left;
+}
+
+.nav-bar-title span {
+    text-align: center;
+}
