@@ -1,3 +1,13 @@
+table {
+    border-collapse: collapse;
+}
+
+table tr th, table tr td {
+    padding: 6px;
+    vertical-align: middle;
+    text-align: left;
+}
+
 form {
     margin: 10px 0;
 }
@@ -33,13 +43,8 @@ input[type="date"] {
     text-align: center;
 }
 
-.title {
-    font-weight: bold;
+.padding-left {
     padding-left: 15px;
-}
-
-.color {
-    margin-bottom: 4px;
 }
 
 .green {
@@ -58,12 +63,31 @@ input[type="date"] {
 }
 
 .white {
-    border-left: 1px #000000 solid;
+    border-left: 1px #ffffff solid;
     border-top: 1px #000000 solid;
-    padding-left: 15px;
 }
 
 .blue {
     border-left: 10px #0000cd solid;
     border-top: 3px #0000cd solid;
+}
+
+.green-background {
+    background: rgba(0, 128, 0, .1);
+}
+
+.red-background {
+    background: rgba(220, 20, 60, .1);
+}
+
+.yellow-background {
+    background: rgba(255, 215, 0, .2);
+}
+
+.white-background {
+    background: rgba(0, 0, 0, .1);
+}
+
+.blue-background {
+    background: rgba(0, 0, 205, .1);
 }

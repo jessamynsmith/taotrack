@@ -4,7 +4,7 @@
 // 'taotrack' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
 // 'taotrack.controllers' is found in controllers.js
-angular.module('taotrack', ['ionic', 'taotrack.controllers'])
+angular.module('taotrack', ['ionic', 'taotrack.controllers', 'taotrack.services'])
 
   .run(function($ionicPlatform) {
     $ionicPlatform.ready(function() {
@@ -53,6 +53,15 @@ angular.module('taotrack', ['ionic', 'taotrack.controllers'])
           'tab-elements': {
             templateUrl: 'templates/tab-elements.html',
             controller: 'ElementsCtrl'
+          }
+        }
+      })
+      .state('tab.elements-detail', {
+        url: '/elements/:elementName',
+        views: {
+          'tab-elements': {
+            templateUrl: 'templates/element-detail.html',
+            controller: 'ElementDetailCtrl'
           }
         }
       });

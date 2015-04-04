@@ -4,41 +4,30 @@
       <span>Five Elements</span>
     </ion-nav-title>
   <ion-content id="elements-content" class="padding">
-    <div class="row title">
-      <div class="col">Element</div>
-      <div class="col">Yin/Yang Organ</div>
-      <div class="col">Animal</div>
-      <div class="col">Season</div>
-    </div>
-    <div class="row color green">
-      <div class="col">Wood</div>
-      <div class="col">Liver/<br>Gallbladder</div>
-      <div class="col">Green Dragon</div>
-      <div class="col">Spring</div>
-    </div>
-    <div class="row color red">
-      <div class="col">Fire</div>
-      <div class="col">Heart/<br>Small Intestine</div>
-      <div class="col">Red Phoenix</div>
-      <div class="col">Summer</div>
-    </div>
-    <div class="row color yellow">
-      <div class="col">Earth</div>
-      <div class="col">Spleen/<br>Stomach</div>
-      <div class="col">Yellow Phoenix</div>
-      <div class="col">Late Summer</div>
-    </div>
-    <div class="row color white">
-      <div class="col">Metal</div>
-      <div class="col">Lungs/<br>Large Intestine</div>
-      <div class="col">White Tiger</div>
-      <div class="col">Autumn</div>
-    </div>
-    <div class="row color blue">
-      <div class="col">Water</div>
-      <div class="col">Kidneys/<br>Bladder</div>
-      <div class="col">Blue-Black Tortoise</div>
-      <div class="col">Winter</div>
-    </div>
+  
+  <table>
+  <tr>
+      <th class="padding-left">Element</th>
+      <th>Yin/Yang Organ</th>
+      <th>Animal</th>
+      <th>Season</th>
+      <th></th>
+    </tr>
+
+    <tbody class="{{element.color}}" ng-repeat="element in elements">
+    <tr>
+      <td>{{element.name}}</td>
+      <td>{{element.yin_organ}}/<br>{{element.yang_organ}}</td>
+      <td>{{element.animal}}</td>
+      <td>{{element.season}}</td>
+      <td>
+      <a href="#/tab/elements/{{element.name}}">
+      <img ng-src="img/{{element.color}}_right_arrow.png" alt="{{element.name}} show more">
+      </a>
+      </td>
+    </tr>
+    </tbody>
+    </table>
+
   </ion-content>
 </ion-view>
