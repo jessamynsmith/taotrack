@@ -4,30 +4,22 @@
       <span>Five Elements</span>
     </ion-nav-title>
   <ion-content id="elements-content" class="padding">
-  
-  <table>
-  <tr>
-      <th class="padding-left">Element</th>
-      <th>Yin/Yang Organ</th>
-      <th>Animal</th>
-      <th>Season</th>
-      <th></th>
-    </tr>
 
-    <tbody class="{{element.color}}" ng-repeat="element in elements">
-    <tr>
-      <td>{{element.name}}</td>
-      <td>{{element.yin_organ}}/<br>{{element.yang_organ}}</td>
-      <td>{{element.animal}}</td>
-      <td>{{element.season}}</td>
-      <td>
-      <a href="#/tab/elements/{{element.name}}">
-      <img ng-src="img/{{element.color}}_right_arrow.png" alt="{{element.name}} show more">
-      </a>
-      </td>
-    </tr>
-    </tbody>
-    </table>
+    <div class="row title">
+      <div class="col">Element</div>
+      <div class="col">Color</div>
+      <div class="col"></div>
+    </div>
+
+    <ion-list>
+      <ion-item ng-repeat="element in elements" href="#/tab/elements/{{element.name}}">
+        <div class="row row-align {{ element.color }}">
+          <div class="col">{{element.name}}</div>
+          <div class="col">{{element.color}}</div>
+          <div class="col"><img ng-src="img/{{element.color}}_right_arrow.png" alt="{{element.name}} show more"></div>
+        </div>
+      </ion-item>
+    </ion-list>
 
   </ion-content>
 </ion-view>
