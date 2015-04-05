@@ -27,14 +27,16 @@ input[type="date"] {
 
 .nav-bar-title img {
     float: left;
+    padding-right: 10px;
 }
 
 .nav-bar-title span {
     text-align: center;
 }
 
-.title {
+.col-align {
     padding-left: 15px;
+    padding-bottom: 10px;
 }
 
 .row-align {
@@ -69,7 +71,7 @@ input[type="date"] {
 .white {
     border-left: 1px #000000 solid;
     border-top: 1px #000000 solid;
-    padding-left: 9px;
+    padding-left: 14px;
 }
 
 .blue {
