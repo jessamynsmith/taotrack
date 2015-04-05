@@ -1,6 +1,6 @@
 {
   "name": "TaoTrack",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "TaoTrack: Personalized recommendations based on Taoist philosophy",
   "engines": {
     "node": "0.12.x"
