@@ -33,9 +33,21 @@ input[type="date"] {
     text-align: center;
 }
 
+.title {
+    padding-left: 15px;
+}
+
 .row-align {
     vertical-align: middle;
     text-align: left;
+}
+
+.plain {
+    border: none;
+}
+
+.plain a.item-content {
+    padding: 0;
 }
 
 .green {

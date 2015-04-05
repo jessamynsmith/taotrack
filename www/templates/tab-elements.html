@@ -12,7 +12,7 @@
     </div>
 
     <ion-list>
-      <ion-item ng-repeat="element in elements" href="#/tab/elements/{{element.name}}">
+      <ion-item class="plain" ng-repeat="element in elements" href="#/tab/elements/{{element.name}}">
         <div class="row row-align {{ element.color }}">
           <div class="col">{{element.name}}</div>
           <div class="col">{{element.color}}</div>
