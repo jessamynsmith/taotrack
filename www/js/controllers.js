@@ -127,20 +127,5 @@ angular.module('taotrack.controllers', ['ngMessages', 'highcharts-ng'])
     $scope.elements = Elements.all();
   })
   .controller('ElementDetailCtrl', function($scope, $stateParams, Elements) {
-    var capitalizeFirstLetter = function(text) {
-      return text.charAt(0).toUpperCase() + text.substr(1);
-    };
-
-    $scope.elementData = [];
-    var elementInstance = Elements.get($stateParams.elementName);
-    if (elementInstance) {
-      $scope.elementColor = elementInstance.color;
-      $scope.elementName = capitalizeFirstLetter(elementInstance.name);
-      for (var property in elementInstance) {
-        if (elementInstance.hasOwnProperty(property) && !property.startsWith('$')) {
-          $scope.elementData.push([capitalizeFirstLetter(property.replace('_', ' ')),
-            elementInstance[property]]);
-        }
-      }
-    }
+    $scope.element = Elements.get($stateParams.elementName);
   });
