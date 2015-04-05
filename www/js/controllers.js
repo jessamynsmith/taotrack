@@ -124,8 +124,20 @@ angular.module('taotrack.controllers', ['ngMessages', 'highcharts-ng'])
   })
 
   .controller('ElementsCtrl', function($scope, $stateParams, Elements) {
-    $scope.elements = Elements.all();
+    var elementData = Elements.all();
+    $scope.elements = [];
+    var keys = ['Name', 'Yin Organ', 'Yang Organ', 'Animal', 'Season'];
+    for (var i = 0; i < elementData.length; i++) {
+      var element = {};
+      for (var j = 0; j < keys.length; j++) {
+        element[keys[j]] = Elements.getValueFromData(elementData[i], keys[j]);
+      }
+      element.color = angular.lowercase(Elements.getValueFromData(elementData[i], 'Color'));
+      $scope.elements.push(element);
+    }
   })
   .controller('ElementDetailCtrl', function($scope, $stateParams, Elements) {
     $scope.element = Elements.get($stateParams.elementName);
+    $scope.element.Name = Elements.getValueFromData($scope.element, 'Name');
+    $scope.element.color = angular.lowercase(Elements.getValueFromData($scope.element, 'Color'));
   });

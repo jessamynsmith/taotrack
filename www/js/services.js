@@ -3,8 +3,8 @@ angular.module('taotrack.services', [])
   .factory('Elements', function() {
     var elements = [{
       name: 'wood',
-      color: 'green',
       data: [
+        ['Name', 'Wood'],
         ['Color', 'Green'],
         ['Spirit', 'Hun'],
         ['Virtue', 'Kindness'],
@@ -20,8 +20,8 @@ angular.module('taotrack.services', [])
         ['Affliction', 'Wind']
     ]}, {
       name: 'fire',
-      color: 'red',
       data: [
+        ['Name', 'Fire'],
         ['Color', 'Red'],
         ['Spirit', 'Shen'],
         ['Virtue', 'Patience'],
@@ -37,8 +37,8 @@ angular.module('taotrack.services', [])
         ['Affliction', 'Heat']
     ]}, {
       name: 'earth',
-      color: 'yellow',
       data: [
+        ['Name', 'Earth'],
         ['Color', 'Yellow'],
         ['Spirit', 'Yi'],
         ['Virtue', 'Fairness'],
@@ -54,8 +54,8 @@ angular.module('taotrack.services', [])
         ['Affliction', 'Damp']
     ]}, {
       name: 'metal',
-      color: 'white',
       data: [
+        ['Name', 'Metal'],
         ['Color', 'White'],
         ['Spirit', 'Po'],
         ['Virtue', 'Courage'],
@@ -71,8 +71,8 @@ angular.module('taotrack.services', [])
         ['Affliction', 'Dry']
     ]}, {
       name: 'water',
-      color: 'blue',
       data: [
+        ['Name', 'Water'],
         ['Color', 'Blue'],
         ['Spirit', 'Zhi'],
         ['Virtue', 'Wisdom'],
@@ -96,6 +96,14 @@ angular.module('taotrack.services', [])
         for (var i = 0; i < elements.length; i++) {
           if (elements[i].name === elementName) {
             return elements[i];
+          }
+        }
+        return null;
+      },
+      getValueFromData: function(element, key) {
+        for (var i = 0; i < element.data.length; i++) {
+          if (element.data[i][0] === key) {
+            return element.data[i][1];
           }
         }
         return null;
