@@ -28,8 +28,29 @@
     "karma-phantomjs-launcher": "^0.1.4",
     "shelljs": "^0.3.0"
   },
+  "scripts": {
+    "preinstall": "npm install -g cordova ionic gulp bower",
+    "postinstall": "bower install"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/jessamynsmith/taotrack"
-  }
+  },
+  "keywords": [
+    "tao",
+    "dao",
+    "cycle",
+    "qi",
+    "energy"
+  ],
+  "license": "MIT",
+  "cordovaPlugins": [
+    "org.apache.cordova.splashscreen"
+  ],
+  "cordovaPlatforms": [
+    {
+      "platform": "android",
+      "locator": "./engine/cordova-android-c0.6.1/"
+    }
+  ]
 }
