@@ -18,7 +18,8 @@ angular.module('taotrack.services', [])
         ['Animal', 'Green Dragon'],
         ['Season', 'Spring'],
         ['Affliction', 'Wind']
-    ]}, {
+      ]
+    }, {
       name: 'fire',
       data: [
         ['Name', 'Fire'],
@@ -35,7 +36,8 @@ angular.module('taotrack.services', [])
         ['Animal', 'Red Phoenix'],
         ['Season', 'Summer'],
         ['Affliction', 'Heat']
-    ]}, {
+      ]
+    }, {
       name: 'earth',
       data: [
         ['Name', 'Earth'],
@@ -52,7 +54,8 @@ angular.module('taotrack.services', [])
         ['Animal', 'Yellow Phoenix'],
         ['Season', 'Late Summer'],
         ['Affliction', 'Damp']
-    ]}, {
+      ]
+    }, {
       name: 'metal',
       data: [
         ['Name', 'Metal'],
@@ -69,7 +72,8 @@ angular.module('taotrack.services', [])
         ['Animal', 'White Tiger'],
         ['Season', 'Autumn'],
         ['Affliction', 'Dry']
-    ]}, {
+      ]
+    }, {
       name: 'water',
       data: [
         ['Name', 'Water'],
@@ -86,7 +90,8 @@ angular.module('taotrack.services', [])
         ['Animal', 'Blue Tortoise'],
         ['Season', 'Winter'],
         ['Affliction', 'Cold']
-    ]}];
+      ]
+    }];
 
     return {
       all: function() {

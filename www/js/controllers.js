@@ -88,8 +88,8 @@ angular.module('taotrack.controllers', ['ngMessages', 'highcharts-ng'])
             }
           },
           labelStyle: {
-              fontWeight: 'bold',
-              fontSize: '14px',
+            fontWeight: 'bold',
+            fontSize: '14px',
             padding: '5px',
             margin: '5px'
           }
