@@ -1,15 +1,16 @@
 <ion-view>
-    <ion-nav-title>
-      <img src="img/logo.png">
-      <span>Energetic Cycles</span>
-    </ion-nav-title>
+  <ion-nav-title>
+    <img src="img/logo.png">
+    <span>Energetic Cycles</span>
+  </ion-nav-title>
   <ion-content id="cycles-content" class="padding">
     <form name="birthDateForm" novalidate="" ng-submit="updateBirthDate(params.birthDate)">
-      <div class="form-error" ng-messages="birthDateForm.birthDate.$error" ng-messages-include="error-messages"></div>
+      <div class="form-error" ng-messages="birthDateForm.birthDate.$error"
+           ng-messages-include="error-messages"></div>
       <label for="birthDate">Birth Date:</label>
-        <input type="date" placeholder="YYYY-MM-DD" class="form-control" id="birthDate"
-        name="birthDate" ng-model="params.birthDate" required>
-        <button type="submit" class="button button-positive">Update</button>
+      <input type="date" placeholder="YYYY-MM-DD" class="form-control" id="birthDate"
+             name="birthDate" ng-model="params.birthDate" required>
+      <button type="submit" class="button button-positive">Update</button>
     </form>
     <highchart config="chartConfig"></highchart>
   </ion-content>

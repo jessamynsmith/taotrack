@@ -1,11 +1,12 @@
 <ion-view title="{{ element.Name }} Element">
   <ion-content class="padding">
 
-    <div class="{{element.color}}-top {{element.color}}">
+    <div class="{{ element.color }}-top {{ element.color }}">
       <ion-list>
-        <div class="row" ng-class-even="'{{element.color}}-background'" ng-repeat="item in element.data">
-          <div class="col">{{item[0]}}</div>
-          <div class="col">{{item[1]}}</div>
+        <div class="row" ng-class-even="'{{ element.color }}-background'"
+             ng-repeat="item in element.data">
+          <div class="col">{{ item[0] }}</div>
+          <div class="col">{{ item[1] }}</div>
         </div>
       </ion-list>
     </div>

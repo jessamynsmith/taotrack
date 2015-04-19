@@ -6,22 +6,23 @@
   <ion-content class="padding">
 
     <ion-list>
-        <div class="item plain col-align row row-align">
-          <div class="col-20">Element</div>
-          <div class="col-25">Yin/Yang Organ</div>
-          <div class="col-25">Animal</div>
-          <div class="col-20">Season</div>
-          <div class="col-10"></div>
-        </div>
+      <div class="item plain col-align row row-align">
+        <div class="col-20">Element</div>
+        <div class="col-25">Yin/Yang Organ</div>
+        <div class="col-25">Animal</div>
+        <div class="col-20">Season</div>
+        <div class="col-10"></div>
+      </div>
 
-      <ion-item class="plain" ng-repeat="element in elements" type="item-text-wrap" href="#/tab/elements/{{ element.Name|lowercase }}">
+      <ion-item class="plain" ng-repeat="element in elements" type="item-text-wrap"
+                href="#/tab/elements/{{ element.Name|lowercase }}">
         <div class="row row-align {{ element.color }}">
           <div class="col-20">{{ element['Name'] }}</div>
           <div class="col-25">{{ element['Yin Organ'] }}/<br>{{ element['Yang Organ'] }}</div>
           <div class="col-25">{{ element['Animal'] }}</div>
           <div class="col-20">{{ element['Season'] }}</div>
           <div class="col-10"><img ng-src="img/{{ element.color }}_right_arrow.png"
-                                alt="{{ element.Name }} show more"></div>
+                                   alt="{{ element.Name }} show more"></div>
         </div>
       </ion-item>
     </ion-list>
