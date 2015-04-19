@@ -44,6 +44,11 @@ angular.module('taotrack.controllers', ['ngMessages', 'highcharts-ng'])
       //$scope.chartConfig.options.rangeSelector.selected = 1;
     };
 
+    // TODO increase size of zoom buttons
+    // TODO possible bug with zoom buttons not updating?
+    // TODO bug where click zoom snaps back
+    // TODO possible bug with scrolling on android
+    // TODO update graph as soon as birthdate is updated
     $scope.updateBirthDate = function(birthDateString) {
       var timestamp = Date.parse(birthDateString);
       if (!isNaN(timestamp)) {
@@ -72,7 +77,22 @@ angular.module('taotrack.controllers', ['ngMessages', 'highcharts-ng'])
         },
         rangeSelector: {
           enabled: true,
-          inputEnabled: false
+          inputEnabled: false,
+          buttonTheme: {
+            height: 41,
+            width: 44,
+            style: {
+              paddingTop: '10px',
+              fontSize: '14px',
+              fontWeight: 'bold'
+            }
+          },
+          labelStyle: {
+              fontWeight: 'bold',
+              fontSize: '14px',
+            padding: '5px',
+            margin: '5px'
+          }
         },
         xAxis: {
           type: 'datetime',
@@ -89,7 +109,7 @@ angular.module('taotrack.controllers', ['ngMessages', 'highcharts-ng'])
         },
         yAxis: {
           min: 0,
-          max: 100,
+          max: 110,
           title: {
             text: 'Level (%)'
           }
