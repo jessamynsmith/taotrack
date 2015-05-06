@@ -14,7 +14,7 @@ Development
 ionic platform add browser ios android
 ionic browser add crosswalk
 
-ionic serve
+node server.js
 ionic run android
 
 ./create_apks.sh
