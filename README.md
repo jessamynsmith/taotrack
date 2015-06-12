@@ -11,10 +11,17 @@ Check out the live app: https://taotrack.herokuapp.com/
 Development
 -----------
 
-ionic platform add browser ios android
-ionic browser add crosswalk
+    ionic platform add ios android
 
-node server.js
-ionic run android
+    node server.js
+    ionic run android
 
-./create_apks.sh
+    ./create_apks.sh
+
+Heroku
+------
+
+    heroku addons:create newrelic:wayne
+    heroku addons:create papertrail:chokla
+
+    heroku config:set NODE_ENV=production
