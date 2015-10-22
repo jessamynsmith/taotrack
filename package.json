@@ -29,7 +29,10 @@
     "karma-phantomjs-launcher": "^0.1.4",
     "shelljs": "^0.3.0"
   },
-  "cacheDirectories": ["node_modules", "www/lib"],
+  "cacheDirectories": [
+    "node_modules",
+    "www/lib"
+  ],
   "scripts": {
     "preinstall": "npm install -g cordova ionic gulp bower",
     "postinstall": "bower install"
@@ -53,6 +56,7 @@
     {
       "platform": "android",
       "locator": "./engine/cordova-android-c0.6.1/"
-    }
+    },
+    "ios"
   ]
 }
