@@ -26,7 +26,7 @@ angular.module('taotrack.services', [])
         ['Color', 'Red'],
         ['Spirit', 'Shen'],
         ['Virtue', 'Patience'],
-        ['Emotion', 'Worry'],
+        ['Emotion', 'Excitement'],
         ['Sound', 'Laugh'],
         ['Yin Organ', 'Heart'],
         ['Yang Organ', 'Small Intestine'],
