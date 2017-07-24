@@ -2,9 +2,6 @@
   "name": "TaoTrack",
   "version": "0.2.0",
   "description": "TaoTrack: Personalized recommendations based on Taoist philosophy",
-  "engines": {
-    "node": "0.12.x"
-  },
   "dependencies": {
     "express": "^4.12.3",
     "gulp": "^3.5.6",
