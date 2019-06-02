@@ -1,5 +1,5 @@
 {
-  "name": "TaoTrack",
+  "name": "taotrack",
   "private": "true",
   "dependencies": {
     "highcharts": "4.1.4",

@@ -16,6 +16,8 @@ Initial Setup
 Development
 -----------
 
+    npm install -g cordova ionic gulp bower
+
     ionic platform add ios android
 
     node server.js

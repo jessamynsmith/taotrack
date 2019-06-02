@@ -5,6 +5,11 @@ describe('controllers', function() {
   angular.module('ngMessages', []);
   angular.module('highcharts-ng', []);
 
+  // clear localStorage
+  beforeEach(function() {
+    localStorage.clear();
+  });
+
   // load the controller's module
   beforeEach(module('taotrack.controllers'));
 
